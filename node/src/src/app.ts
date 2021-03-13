@@ -1,4 +1,5 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 import router from './route/index'
 import dotENV from 'dotenv'
 
@@ -12,6 +13,10 @@ app
     .set('views', './src/views')
 
 app
+app
+    .use(bodyParser.urlencoded({
+    extended: true}))
+    .use(bodyParser.json())
     .use(express.static('dist/public'))
     .use('/', router)
 

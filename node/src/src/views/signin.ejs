@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignIn Page</title>
+    <title>SignUp Page</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <script src="js/main.js"></script>
+    <article>
+        <section>
+            <header>
+                <h1><%= page.title %></h1>
+            </header>
+        </section>
+        <section>
+            <fieldset>
+                <legend><%= page.guide %></legend>
+                <form action="/signin/add" method="post">
+                    <section>
+                        <label for="userEmail">User Email
+                            <input type="email" name="userEmail">
+                        </label>
+                    </section>
+                    <section>
+                        <label for="userPassword">User Password
+                            <input type="password" name="userPassword">
+                        </label>
+                    </section>
+                    <hr>
+                    <button type="submit"><%= page.action %></button>
+                </form>
+            </fieldset>
+        </section>
+        <br>
+        <section>
+            <a href="<%= url.href %>"><%= url.action %></a>
+        </section>
+    </article>
+    <script src="<%= script %>"></script>
 </body>
 </html>
